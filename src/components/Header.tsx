@@ -32,25 +32,28 @@ export default function Header({ onNavigateToSection }: HeaderProps) {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none py-2 sm:py-3"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none py-0 md:py-3"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-0 md:px-6 lg:px-8">
         <div className="flex items-center justify-center relative">
           
-          {/* Centered Master Group with local glassy background scoped around content */}
-          <div className={`transition-all duration-300 rounded-2xl sm:rounded-full px-4 sm:px-6 py-0.5 sm:py-1 shadow-lg border border-white/40 md:gap-4 lg:gap-6 ${
+          {/* Centered Master Group: 
+              - On mobile: drops directly from top ceiling, semi-opaque sleek glass (menos transparente, blanco lechoso), tight padding so logo fills the space.
+              - On desktop: elegant centered floating pill capsule with navigation and social icons.
+          */}
+          <div className={`transition-all duration-300 pointer-events-auto inline-flex items-center justify-center ${
             isScrolled
-              ? 'max-md:opacity-0 max-md:-translate-y-12 max-md:pointer-events-none max-md:scale-95 pointer-events-auto inline-flex items-center justify-center bg-white/75 backdrop-blur-xl border-neutral-200/60 shadow-neutral-900/10'
-              : 'pointer-events-auto inline-flex items-center justify-center opacity-100 translate-y-0 scale-100 bg-white/65 backdrop-blur-lg border-white/50 shadow-black/10'
+              ? 'max-md:opacity-0 max-md:-translate-y-16 max-md:pointer-events-none max-md:scale-95 bg-white/90 backdrop-blur-md border-b border-x border-neutral-200/60 shadow-md rounded-b-2xl px-2 py-0.5 md:bg-white/75 md:rounded-full md:border md:border-neutral-200/60 md:px-6 md:py-1 md:gap-4 lg:gap-6'
+              : 'opacity-100 translate-y-0 scale-100 bg-white/80 backdrop-blur-md border-b border-x border-white/70 shadow-lg shadow-black/10 rounded-b-2xl px-2.5 py-0.5 md:bg-white/65 md:rounded-full md:border md:border-white/50 md:px-6 md:py-1 md:gap-4 lg:gap-6'
           }`}>
-            {/* Protagonist Larger Logo with responsive scale and elegant 3D vertical overflow */}
+            {/* Protagonist Logo scaled up to tightly fill the container */}
             <a
               href="#"
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="flex items-center justify-center group focus:outline-none py-0 shrink-0"
+              className="flex items-center justify-center group focus:outline-none py-0 shrink-0 w-full overflow-hidden"
             >
               {!logoFailed ? (
                 <img 
@@ -58,8 +61,8 @@ export default function Header({ onNavigateToSection }: HeaderProps) {
                   alt="Stadium Padel Logo" 
                   className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 filter drop-shadow-sm block ${
                     isScrolled 
-                      ? 'h-14 sm:h-16 md:h-18 max-w-[150px] sm:max-w-[180px] -my-3' 
-                      : 'h-24 sm:h-28 md:h-34 max-w-[210px] sm:max-w-[260px] -my-6 sm:-my-8'
+                      ? 'h-16 sm:h-18 md:h-18 max-w-[220px] sm:max-w-[240px] md:max-w-[180px] -my-1 md:-my-3 scale-110' 
+                      : 'h-24 sm:h-28 md:h-34 max-w-[260px] sm:max-w-[290px] md:max-w-[260px] -my-0.5 sm:-my-1 md:-my-8 scale-110 sm:scale-115'
                   }`}
                   referrerPolicy="no-referrer"
                   onError={() => setLogoFailed(true)}
