@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea252f" />
+      <stop offset="100%" stop-color="#b8121a" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Rounded Squircle Badge -->
+  <rect x="24" y="24" width="464" height="464" rx="112" ry="112" fill="url(#bgGrad)" />
+  
+  <!-- Subtle Top Specular Sheen -->
+  <rect x="24" y="24" width="464" height="232" rx="112" ry="112" fill="url(#glowGrad)" />
+
+  <!-- Inner Stroke Highlight -->
+  <rect x="28" y="28" width="456" height="456" rx="108" ry="108" fill="none" stroke="#ffffff" stroke-opacity="0.2" stroke-width="8" />
+
+  <!-- Quento Distinctive 'Q' Glyph -->
+  <g filter="url(#dropShadow)">
+    <!-- Main O Ring -->
+    <path 
+      d="M256,96 C173,96 112,157 112,246 C112,335 173,396 256,396 C290,396 322,384 348,363 L382,398 C392,408 408,408 418,398 C428,388 428,372 418,362 L383,327 C394,303 400,275 400,246 C400,157 339,96 256,96 Z M256,334 C206,334 172,296 172,246 C172,196 206,158 256,158 C306,158 340,196 340,246 C340,296 306,334 256,334 Z" 
+      fill="#ffffff" 
+    />
+    <!-- Tennis/Padel Ball inside / accent -->
+    <circle cx="256" cy="246" r="22" fill="#c3eb14" stroke="#ffffff" stroke-width="4" />
+  </g>
+</svg>

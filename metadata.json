@@ -1,0 +1,8 @@
+{
+  "name": "Stadium Pádel",
+  "description": "Sitio web oficial de stadium padel, club de pádel premium en Villa Elisa, Buenos Aires. Descubre nuestras canchas, instalaciones y reserva en línea de forma rápida y sencilla.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
