@@ -1,35 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ea252f" />
-      <stop offset="100%" stop-color="#b8121a" />
+    <!-- Background Gradient - Stadium Electric Blue to Deep Oceanic Blue -->
+    <linearGradient id="stadiumBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0089D8" />
+      <stop offset="45%" stop-color="#2D37FB" />
+      <stop offset="100%" stop-color="#14197E" />
     </linearGradient>
-    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3" />
+
+    <!-- Metallic/Gloss Sheen -->
+    <linearGradient id="sheenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.05" />
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
-    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.35" />
+
+    <!-- Vibrant Yellow Accent for the Padel Ball -->
+    <linearGradient id="ballGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2F952" />
+      <stop offset="100%" stop-color="#B2DF00" />
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="shadowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#05082E" flood-opacity="0.5" />
     </filter>
   </defs>
 
-  <!-- Rounded Squircle Badge -->
-  <rect x="24" y="24" width="464" height="464" rx="112" ry="112" fill="url(#bgGrad)" />
+  <!-- Squircle Base Container -->
+  <rect x="24" y="24" width="464" height="464" rx="112" ry="112" fill="url(#stadiumBg)" />
   
-  <!-- Subtle Top Specular Sheen -->
-  <rect x="24" y="24" width="464" height="232" rx="112" ry="112" fill="url(#glowGrad)" />
+  <!-- Subtle Top Specular Gloss -->
+  <rect x="24" y="24" width="464" height="232" rx="112" ry="112" fill="url(#sheenGrad)" />
 
-  <!-- Inner Stroke Highlight -->
-  <rect x="28" y="28" width="456" height="456" rx="108" ry="108" fill="none" stroke="#ffffff" stroke-opacity="0.2" stroke-width="8" />
+  <!-- Inner Border Stroke -->
+  <rect x="28" y="28" width="456" height="456" rx="108" ry="108" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="6" />
 
-  <!-- Quento Distinctive 'Q' Glyph -->
-  <g filter="url(#dropShadow)">
-    <!-- Main O Ring -->
+  <!-- Dynamic Stadium S Emblem with Padel Dynamics -->
+  <g filter="url(#shadowFilter)">
+    <!-- Stylized Modern Athletic 'S' Icon -->
     <path 
-      d="M256,96 C173,96 112,157 112,246 C112,335 173,396 256,396 C290,396 322,384 348,363 L382,398 C392,408 408,408 418,398 C428,388 428,372 418,362 L383,327 C394,303 400,275 400,246 C400,157 339,96 256,96 Z M256,334 C206,334 172,296 172,246 C172,196 206,158 256,158 C306,158 340,196 340,246 C340,296 306,334 256,334 Z" 
+      d="M344,142 C320,126 288,118 250,118 C176,118 132,154 132,208 C132,258 170,282 232,298 L266,306 C308,317 328,332 328,358 C328,390 294,410 248,410 C202,410 160,390 134,360 L102,398 C138,442 192,464 252,464 C338,464 388,422 388,354 C388,300 350,274 286,258 L252,250 C214,240 192,226 192,202 C192,176 220,160 258,160 C292,160 322,174 344,194 Z" 
       fill="#ffffff" 
     />
-    <!-- Tennis/Padel Ball inside / accent -->
-    <circle cx="256" cy="246" r="22" fill="#c3eb14" stroke="#ffffff" stroke-width="4" />
+    
+    <!-- Neon Padel Ball Accent -->
+    <circle cx="364" cy="148" r="28" fill="url(#ballGrad)" stroke="#ffffff" stroke-width="4" />
+    <path d="M348,136 Q364,148 348,160" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.6" />
+    <path d="M380,136 Q364,148 380,160" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.6" />
   </g>
 </svg>
